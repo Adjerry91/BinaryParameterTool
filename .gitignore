@@ -418,3 +418,4 @@ FodyWeavers.xsd
 /Assembly-CSharp-Editor.csproj
 /.vsconfig
 /Assets/VRCFaceTracking/Tools/Binary Parameter Tool/Editor/Test.controller
+/Assets/VRCFaceTracking/Tools/Binary Parameter Tool/Editor/AllParams.asset
