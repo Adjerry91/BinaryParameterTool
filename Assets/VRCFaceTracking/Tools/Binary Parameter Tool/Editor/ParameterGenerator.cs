@@ -15,6 +15,7 @@ namespace VRCFaceTracking.EditorTools
         {
             // Metric to gauge additional Expression Parameter's storage cost
             int paramTotalCost = 0;
+            int maxCost = VRCExpressionParameters.MAX_PARAMETER_COST;
 
             paramTotalCost += avatarDescriptor.expressionParameters.CalcTotalCost();
 
@@ -30,8 +31,8 @@ namespace VRCFaceTracking.EditorTools
                 if (avatarDescriptor.expressionParameters.FindParameter(param.name) == null)
                     paramTotalCost += (param.valueType == VRCExpressionParameters.ValueType.Bool ? 1 : 8);
 
-            // exit if expected total parameter cost exceeds max of 128 bits
-            if (paramTotalCost > 128)
+            // exit if expected total parameter cost exceeds max of the parameters'`4 bits
+            if (paramTotalCost > maxCost)
             {
                 Debug.Log("Additional Expression Parameters exceed maximum storage. : " + paramTotalCost);
                 return false;
